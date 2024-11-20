@@ -98,21 +98,37 @@ int Password::count_leading_characters(string phrase){
 
 
 // Implementation D
-#include <cctype>
+// #include <cctype>
+// bool Password::has_mixed_case(string str)
+// {
+//   bool is_lower = false;
+//   bool is_upper = false;
+//   for (char c : str)
+//   {
+//     if (std::islower(c))
+//     {
+//       is_lower = true;
+//     }
+//     else
+//     {
+//       is_upper = true;
+//     }
+//   }
+//   return is_lower && is_upper;
+// }
+
+
+// Implementation E
 bool Password::has_mixed_case(string str)
 {
-  bool is_lower = false;
-  bool is_upper = false;
-  for (char c : str)
-  {
-    if (std::islower(c))
-    {
-      is_lower = true;
+  bool found = false;
+  for(char c : str){
+    if( !found && c >= 'A' && c <= 'Z' ){
+      found = true;
     }
-    else
-    {
-      is_upper = true;
+    else if( found && c >= 'a' && c <= 'z'){
+      return true;
     }
   }
-  return is_lower && is_upper;
+  return false;
 }
