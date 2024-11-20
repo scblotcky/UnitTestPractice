@@ -8,10 +8,10 @@
 class PasswordTest : public ::testing::Test
 {
 protected:
-	1QAAWZSD PasswordTest() {} // constructor runs before each test
+	PasswordTest() {}		   // constructor runs before each test
 	virtual ~PasswordTest() {} // destructor cleans up after tests
 	virtual void SetUp() {}	   // sets up before each test (after constructor)
-	virtual void TearDown() {} // clean up after each test, (before destructor) 
+	virtual void TearDown() {} // clean up after each test, (before destructor)
 };
 
 TEST(PasswordTest, single_letter_password)
@@ -60,7 +60,6 @@ TEST(PasswordTest, no_letter_password)
 
 	ASSERT_EQ(false, actual);
 }
-
 
 TEST(PasswordTest, one_letter_password)
 {
