@@ -24,7 +24,7 @@ TEST(PasswordTest, single_letter_password)
 TEST(PasswordTest, number_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("12345");
+	bool actual = my_password.has_mixed_case("12345");
 
 	ASSERT_EQ(false, actual);
 }
@@ -32,7 +32,7 @@ TEST(PasswordTest, number_password)
 TEST(PasswordTest, single_upper_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("Lamp");
+	bool actual = my_password.has_mixed_case("Lamp");
 
 	ASSERT_EQ(true, actual);
 }
@@ -40,7 +40,7 @@ TEST(PasswordTest, single_upper_password)
 TEST(PasswordTest, no_lower_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("AL1EN");
+	bool actual = my_password.has_mixed_case("AL1EN");
 
 	ASSERT_EQ(false, actual);
 }
@@ -48,7 +48,7 @@ TEST(PasswordTest, no_lower_password)
 TEST(PasswordTest, all_lower_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("hello");
+	bool actual = my_password.has_mixed_case("hello");
 
 	ASSERT_EQ(false, actual);
 }
@@ -56,7 +56,7 @@ TEST(PasswordTest, all_lower_password)
 TEST(PasswordTest, no_letter_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("45.7");
+	bool actual = my_password.has_mixed_case("45.7");
 
 	ASSERT_EQ(false, actual);
 }
@@ -64,7 +64,7 @@ TEST(PasswordTest, no_letter_password)
 TEST(PasswordTest, one_letter_password)
 {
 	Password my_password;
-	int actual = my_password.has_mixed_case("S");
+	bool actual = my_password.has_mixed_case("S");
 
 	ASSERT_EQ(false, actual);
 }
