@@ -28,7 +28,7 @@ bool Password::has_mixed_case(string pass){
   bool upper = false;
   bool lower = false;
 
-  for(int i = 0; i < pass.size(); i++)
+  for(int i = 0; i < (int)pass.size(); i++)
   {
     char c = pass[i];
     if(isupper(c) == true) // has at least one upper case
