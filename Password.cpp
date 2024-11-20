@@ -63,16 +63,35 @@ int Password::count_leading_characters(string phrase){
 //   return has_lower && has_upper;
 // }
 
-// Implementation B
+// // Implementation B
+// bool Password::has_mixed_case(string str)
+// {
+//   int count_lower = 0;
+//   for (int i = 0; i < str.length(); i++)
+//   {
+//     if (str[i] >= 'a' && str[i] <= 'z')
+//     {
+//       count_lower++;
+//     }
+//   }
+//   return count_lower > 0 && count_lower < str.length();
+// }
+
+// Implementation C
 bool Password::has_mixed_case(string str)
 {
-  int count_lower = 0;
+  bool lower = false;
+  bool upper = false;
   for (int i = 0; i < str.length(); i++)
   {
     if (str[i] >= 'a' && str[i] <= 'z')
     {
-      count_lower++;
+      lower = true;
+    }
+    else if (str[i] >= 'A' && str[i] <= 'Z')
+    {
+      upper = true;
     }
   }
-  return count_lower > 0 && count_lower < str.length();
+  return upper && lower;
 }
