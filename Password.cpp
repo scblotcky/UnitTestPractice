@@ -24,27 +24,41 @@ int Password::count_leading_characters(string phrase){
   receives a string and returns whether it has both at least one upper-case
   letter and at least one lower-case letter
 */
-bool Password::has_mixed_case(string pass){
-  bool upper = false;
-  bool lower = false;
+// bool Password::has_mixed_case(string pass){
+//   bool upper = false;
+//   bool lower = false;
 
-  for(int i = 0; i < (int)pass.size(); i++)
+//   for(int i = 0; i < (int)pass.size(); i++)
+//   {
+//     // char c = pass[i];
+//     int ascii = static_cast<int>(pass[i]);
+//     if(ascii >= 65 && ascii <= 90) // has at least one upper case
+//     {
+//       upper = true;
+//     }
+//     if(ascii >= 97 && ascii <= 122)  // has at least one lower case
+//     {
+//       lower = true;
+//     }
+//   }
+//   return upper && lower ? true : false;
+// }
+
+#include <cctype>
+bool Password::has_mixed_case(string str)
+{
+  bool has_lower = false;
+  bool has_upper = false;
+  for (char ch : str)
   {
-    // char c = pass[i];
-    int ascii = static_cast<int>(pass[i]);
-    if(ascii >= 65 && ascii <= 90) // has at least one upper case
+    if (std::islower(ch))
     {
-      upper = true;
+      has_lower = true;
     }
-    if(ascii >= 97 && ascii <= 122)  // has at least one lower case
+    else if (std::isupper(ch))
     {
-      lower = true;
+      has_upper = true;
     }
-
-    // if(upper && lower)  // return true if at least one upper and one lower case
-    // {
-    //   return true;
-    // }
   }
-  return upper && lower ? true : false;
+  return has_lower && has_upper;
 }
