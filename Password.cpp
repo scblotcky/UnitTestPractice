@@ -31,11 +31,12 @@ bool Password::has_mixed_case(string pass){
   for(int i = 0; i < (int)pass.size(); i++)
   {
     // char c = pass[i];
-    if(isupper(pass[i]) == true) // has at least one upper case
+    int ascii = static_cast<int>(pass[i]);
+    if(ascii >= 65 && ascii <= 90) // has at least one upper case
     {
       upper = true;
     }
-    if(islower(pass[i]) == true)  // has at least one lower case
+    if(ascii >= 97 && ascii <= 122)  // has at least one lower case
     {
       lower = true;
     }
