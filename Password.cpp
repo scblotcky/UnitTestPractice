@@ -40,10 +40,10 @@ bool Password::has_mixed_case(string pass){
       lower = true;
     }
 
-    if(upper && lower)  // return true if at least one upper and one lower case
-    {
-      return true;
-    }
+    // if(upper && lower)  // return true if at least one upper and one lower case
+    // {
+    //   return true;
+    // }
   }
-  return false;
+  return upper && lower ? true : false;
 }
