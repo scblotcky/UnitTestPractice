@@ -32,7 +32,7 @@ TEST(PasswordTest, number_password)
 TEST(PasswordTest, single_upper_password)
 {
 	Password my_password;
-	bool actual = my_password.has_mixed_case("Lamp");
+	int actual = my_password.has_mixed_case("Lamp");
 
 	ASSERT_EQ(true, actual);
 }
